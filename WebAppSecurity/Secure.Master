@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Secure.master.cs" Inherits="WebAppSecurity.Secure" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 1776px;
+        }
+        .auto-style6 {
+            width: 443px;
+        }
+        .auto-style7 {
+            width: 444px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="topPannel">
+            <table class="auto-style1">
+                <tr>
+                    <td colspan="4"><h1>Security Example in ASP.Net</h1></td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">
+                        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Home.aspx">Home</asp:HyperLink>
+                    </td>
+                    <td class="auto-style6">
+                        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/About.aspx">About</asp:HyperLink>
+                    </td>
+                    <td class="auto-style7">
+                        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/Contact.aspx">Contact</asp:HyperLink>
+                    </td>
+                    <td class="auto-style7">
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style6">
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <AnonymousTemplate>
+                                Welcome Guest
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                Hii
+                                <asp:LoginName ID="LoginName1" runat="server" />
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </td>
+                    <td class="auto-style6">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                    <td class="auto-style7">&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+        <div class="mainPannel">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
